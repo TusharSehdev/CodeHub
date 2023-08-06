@@ -16,8 +16,9 @@ use App\Models\RegisterModel;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/customers', [CustomersController::class,'index']);
+Route::get('/customers', [RegisterController::class,'customers']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/LogIn', [LogInController::class, 'index']);
+Route::get('customers/delete/{id}', [RegisterController::class, 'delete'])->name('customer.delete');

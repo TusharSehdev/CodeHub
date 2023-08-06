@@ -21,16 +21,19 @@ class RegisterController extends Controller
         ]);
         echo"<pre>";
         print_r($request->all());
-        $register = new register;
+        $register = new RegisterModel;
         $register->name = $request['name'];
         $register->email = $request['email'];
         $register->password = md5($request['password']);
         $register->save();
-        return redirect('/SignIn');
+        return redirect('/register');
     }
     public function customers(){
-        $registers = register::all();
+        $registers = RegisterModel::all();
         $data = compact('registers');
         return view('customers')->with($data);
+    }
+    public function delete(){
+        
     }
 }

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class RegisterModel extends Model
 {
     use HasFactory;
-    protected $table ="customers";
+    protected $table ="table_customers";
     protected $primaryKey = "id";
 }
