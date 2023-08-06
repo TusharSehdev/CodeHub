@@ -29,7 +29,7 @@
                         <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute</p>
 
                         <!-- form -->
-                        <form action="#">
+                        <form action="{{ url('/') }}/LogIn" method="post">
                             <div class="mb-3">
                                 <label for="fullname" class="form-label">Full Name</label>
                                 <input class="form-control" type="text" id="fullname" placeholder="Enter your name" required>
