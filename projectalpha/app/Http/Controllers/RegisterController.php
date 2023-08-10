@@ -19,21 +19,27 @@ class RegisterController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        echo"<pre>";
+        echo '<pre>';
         print_r($request->all());
-        $register = new RegisterModel;
+        $register = new RegisterModel();
         $register->name = $request['name'];
         $register->email = $request['email'];
         $register->password = md5($request['password']);
         $register->save();
         return redirect('/register');
     }
-    public function customers(){
+    public function customers()
+    {
         $registers = RegisterModel::all();
         $data = compact('registers');
         return view('customers')->with($data);
     }
-    public function delete(){
-        
+    public function delete($id)
+    {
+        $register = RegisterModel::find($id);
+        if (!is_null($register)) {
+            $register->delete();
+        }
+        return redirect('customers');
     }
 }
