@@ -25,7 +25,9 @@
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->password }}</td>
-                        <td><button class="btn btn-primary">Edit</button>
+                        <td>
+                            <a href="{{ url('customers/edit/') }}/{{ $value->id }}"><button class="btn btn-primary">Edit</button></a>
+
                             <a href="{{ url('customers/delete/') }}/{{ $value->id }}"><button
                                     class="btn btn-danger">Delete</button></a>
                         </td>

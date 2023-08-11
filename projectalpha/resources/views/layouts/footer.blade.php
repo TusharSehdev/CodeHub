@@ -9,7 +9,7 @@
         <!-- end auth-fluid-->
 
         <!-- Authentication js -->
-        <script src="assets/js/pages/authentication.init.js"></script>
+        <script src="{{ url('assets/js/pages/authentication.init.js') }}"></script>
 
     </body>
 </html>

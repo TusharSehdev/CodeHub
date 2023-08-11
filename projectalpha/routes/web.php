@@ -22,3 +22,4 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/LogIn', [LogInController::class, 'index']);
 Route::get('customers/delete/{id}', [RegisterController::class, 'delete'])->name('customer.delete');
+Route::get('customers/edit/{id}', [RegisterController::class, 'edit'])->name('register.edit');

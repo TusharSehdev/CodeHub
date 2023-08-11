@@ -36,10 +36,20 @@ class RegisterController extends Controller
     }
     public function delete($id)
     {
-        $register = RegisterModel::find($id);
-        if (!is_null($register)) {
-            $register->delete();
+        $registers = RegisterModel::find($id);
+        if (!is_null($registers)) {
+            $registers->delete();
         }
-        return redirect('customers');
+        return redirect('register');
+    }
+    public function edit($id){
+        $registers = RegisterModel::find($id);
+        if (is_null($registers)){
+            return redirect('customers');
+
+        }else{
+            $data = compact('registers');
+            return view('register')->with($data);
+        }
     }
 }
