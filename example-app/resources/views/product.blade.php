@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-<div class="custom-product">
+    <div class="custom-product">
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -16,25 +16,38 @@
             </div>
             <div class="carousel-inner">
                 @foreach ($products as $item)
-                    <div class="carousel-item {{$item['id']==1?'active':''}} ">
-                        <img class="slider-img" src="{{$item['gallery']}}" class="d-block w-100" alt="...">
+                    <div class="carousel-item {{ $item['id'] == 1 ? 'active' : '' }} ">
+                        <img class="slider-img" src="{{ $item['gallery'] }}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block slider-text">
-                            <h5 style="color: black">{{$item['description']}}</h5>
+                            <h5 style="color: black">{{ $item['description'] }}</h5>
                             <p style="color: black">Some representative placeholder content for the first slide.</p>
                         </div>
                     </div>
                 @endforeach
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-</div>
-
-@endsection
+        <div class="trending-wrapper">
+            <h1>Trending Products</h1>
+            <div class="">
+                @foreach ($products as $item)
+                    <div class="trending-item">
+                        <img class="trending-img" src="{{ $item['gallery'] }}">
+                            <div class="">
+                                <h3 style="color: black">{{ $item['name'] }}</h3>
+                            </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endsection
