@@ -27,4 +27,7 @@ class UserController extends Controller
             return redirect('/product');
         }
     }
+    function test(){
+        return view('test');
+    }
 }
