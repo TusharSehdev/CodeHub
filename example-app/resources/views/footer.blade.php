@@ -1,3 +1,4 @@
+<br><br>
 <div class="footer">
 <footer class="bg-light text-center text-white">
     <!-- Grid container -->

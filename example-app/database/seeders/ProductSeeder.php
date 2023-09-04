@@ -25,8 +25,8 @@ class ProductSeeder extends Seeder
          [
             'name'=>'google pixel',
             'price'=>'50000',
-            'description'=>'smartphone is from google',
-            'category'=>'mobile',
+            'des    cription'=>'smartphone is from google',
+            'ca tegory'=>'mobile',
             'gallery'=>'https://images.news18.com/ibnlive/uploads/2022/05/pixel-6a-india-launch.jpg'
          ],
          [

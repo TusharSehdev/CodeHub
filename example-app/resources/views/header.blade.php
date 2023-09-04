@@ -16,14 +16,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="">About Us</a>
                 </li>
-            </ul>
+
             <form action="/search" class="navbar-form navbar-left">
                     <div class="form-group">
                         <input type="text" name="query" class="form-control search-box" placeholder="Search" aria-label="Search"
                             aria-describedby="search-addon" />
                     </div>
-                    <button type="submit" class="btn btn-outline-primary">search</button>
             </form>
+
+        </ul>
             <button class="btn btn-outline-success" type="submit">Cart</button>
         </div>
     </div>

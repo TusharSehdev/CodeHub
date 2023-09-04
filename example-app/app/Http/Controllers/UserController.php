@@ -4,30 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    function view()
-    {
-        return view('signin');
 
-    }
-    function signin(Request $request)
+    function signin(Request $req)
     {
-        $user= User::where(['email'=>$request->email])->first();
+        $user= User::where(['email'=>$req->email])->first();
 
-        if(!$user || !Hash::check($request->password,$user->password))
+        if(!$user || !Hash::check($req->password, $user->password))
         {
             return "password dont match";
         }
         else{
-            $request->session()->put('user',$user);
-            return redirect('/product');
+            $req->session()->put('user',$user);
+            return redirect('/');
         }
-    }
-    function test(){
-        return view('test');
     }
 }
