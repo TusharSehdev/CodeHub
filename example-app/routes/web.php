@@ -19,3 +19,5 @@ Route::get('/signin',[UserController::class,'view']);
 Route::post('/signin',[UserController::class,'signin']);
 Route::get('/product',[ProductController::class,'index']);
 Route::get('/test',[UserController::class,'test']);
+Route::get('/detail/{id}',[ProductController::class,'detail']);
+Route::get('/search',[ProductController::class,'search']);
