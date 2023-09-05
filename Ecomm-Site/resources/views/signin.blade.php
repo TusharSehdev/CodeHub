@@ -2,6 +2,7 @@
 @section('content')
     <div class="container custom-login">
         <div class="row">
+            <h2>Login</h2>
             <div class="col-sm-4 col-sm-offset-4">
                 <form action="signin" method="POST">
                     <div class="form-group">
