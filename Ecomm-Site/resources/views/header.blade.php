@@ -35,19 +35,21 @@ if (Session::has('user')) {
 
             </ul>
             <ul class="nav navbar-nav navbar-right ">
-                <button class="btn btn-outline-success" type="submit">Cart( {{ $total }} )</button>
+                <a href="/cart">
+                    <button class="btn btn-outline-success" type="submit">Cart( {{ $total }} )</button>
+                </a>
                 @if (Session::has('user'))
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       {{Session::get('user')['name']}}
-                    </a>
-                    <div class="dropdown-menu mb-4" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/logout">LogOut</a>
-                    </div>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Session::get('user')['name'] }}
+                        </a>
+                        <div class="dropdown-menu mb-4" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/logout">LogOut</a>
+                        </div>
+                    </li>
                 @else
-                <a href="/signin">Login</a>
+                    <a href="/signin">Login</a>
                 @endif
             </ul>
 

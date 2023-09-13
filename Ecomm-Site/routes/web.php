@@ -22,3 +22,6 @@ Route::get('/test',[UserController::class,'test']);
 Route::get('/detail/{id}',[ProductController::class,'detail']);
 Route::get('/search',[ProductController::class,'search']);
 Route::post('/add_to_cart',[ProductController::class,'addToCart']);
+Route::get('/cart',[ProductController::class,'Cart']);
+Route::get('/removecart/{id}',[ProductController::class,'removecart']);
+Route::get('ordernow',[ProductController::class,'ordernow']);
